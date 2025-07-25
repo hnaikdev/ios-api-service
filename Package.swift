@@ -5,17 +5,24 @@ import PackageDescription
 
 let package = Package(
     name: "ios-api-service",
+    platforms: [
+        .iOS(.v15)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "ios-api-service",
             targets: ["ios-api-service"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.10.0"))
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "ios-api-service"),
+            name: "ios-api-service",
+            dependencies: [
+                "Alamofire"
+            ]
+        ),
         .testTarget(
             name: "ios-api-serviceTests",
             dependencies: ["ios-api-service"]
