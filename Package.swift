@@ -4,13 +4,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "ios-api-service",
+    name: "SwiftServiceKit",
     platforms: [
         .iOS(.v15)
     ],
     products: [
         .library(
-            name: "ios-api-service",
+            name: "SwiftServiceKit",
             targets: ["ios-api-service"]),
     ],
     dependencies: [
