@@ -1,0 +1,24 @@
+{
+  "originHash" : "499382ae0ef55ac31365e0551c9b935183fd05445b50671405986572fe437469",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
+        "version" : "5.10.2"
+      }
+    },
+    {
+      "identity" : "ios-api-service",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:hnaikdev/ios-api-service.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "eabb31dfd9211e963756ddc313c371d788a90499"
+      }
+    }
+  ],
+  "version" : 3
+}
