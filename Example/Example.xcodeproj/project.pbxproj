@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A2174E922E34196500BEA91C /* ios-api-service in Frameworks */ = {isa = PBXBuildFile; productRef = A2174E912E34196500BEA91C /* ios-api-service */; };
+		A27C33C42E381053005DCB3D /* SwiftServiceKit in Frameworks */ = {isa = PBXBuildFile; productRef = A27C33C32E381053005DCB3D /* SwiftServiceKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2174E922E34196500BEA91C /* ios-api-service in Frameworks */,
+				A27C33C42E381053005DCB3D /* SwiftServiceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +117,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				A2174E912E34196500BEA91C /* ios-api-service */,
+				A27C33C32E381053005DCB3D /* SwiftServiceKit */,
 			);
 			productName = Example;
 			productReference = A2174E4C2E3418F200BEA91C /* Example.app */;
@@ -202,7 +202,7 @@
 			mainGroup = A2174E432E3418F200BEA91C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A2174E902E34196500BEA91C /* XCRemoteSwiftPackageReference "ios-api-service" */,
+				A27C33C22E381053005DCB3D /* XCRemoteSwiftPackageReference "ios-api-service" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A2174E4D2E3418F200BEA91C /* Products */;
@@ -569,7 +569,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A2174E902E34196500BEA91C /* XCRemoteSwiftPackageReference "ios-api-service" */ = {
+		A27C33C22E381053005DCB3D /* XCRemoteSwiftPackageReference "ios-api-service" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:hnaikdev/ios-api-service.git";
 			requirement = {
@@ -580,10 +580,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A2174E912E34196500BEA91C /* ios-api-service */ = {
+		A27C33C32E381053005DCB3D /* SwiftServiceKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A2174E902E34196500BEA91C /* XCRemoteSwiftPackageReference "ios-api-service" */;
-			productName = "ios-api-service";
+			package = A27C33C22E381053005DCB3D /* XCRemoteSwiftPackageReference "ios-api-service" */;
+			productName = SwiftServiceKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

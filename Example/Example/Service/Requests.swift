@@ -5,7 +5,7 @@
 //  Created by Hiral Naik on 7/28/25.
 //
 
-import ios_api_service
+import SwiftServiceKit
 import Foundation
 
 enum Requests {

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import ios_api_service
+import SwiftServiceKit
 
 protocol APIServiceProtocol {
     func fetchData() async throws -> [User]
@@ -14,9 +14,9 @@ protocol APIServiceProtocol {
 
 class APIService: APIServiceProtocol {
     
-    let apiService: ios_api_service.APIService
+    let apiService: SwiftServiceKit.APIService
     
-    init(apiService: ios_api_service.APIService) {
+    init(apiService: SwiftServiceKit.APIService) {
         self.apiService = apiService
     }
     
