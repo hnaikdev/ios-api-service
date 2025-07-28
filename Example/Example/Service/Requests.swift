@@ -15,14 +15,6 @@ enum Requests {
 }
 
 extension Requests.V1: RequestConvertibleProtocol, RequestBuilder {
-    func build(parameters: [String : any Sendable]?) -> [String : any Sendable]? {
-        return parameters
-    }
-    
-    func build(method: ios_api_service.HTTPMethod, baseURL: URL?, path: String?, params: [String : Any]?, paramsList: [Any]?, body: Data?, headers: [String : String]?, forceURLEncoding: Bool) throws -> URLRequest {
-        return try asURLRequest()
-    }
-    
     func asURLRequest() throws -> URLRequest {
         var request: URLRequest
         
