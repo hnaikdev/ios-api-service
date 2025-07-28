@@ -15,7 +15,7 @@ public protocol RequestConvertibleProtocol {
 }
 
 public protocol RequestBuilder {
-    func build(method: HTTPMethod, baseURL: URL?, path: String?, params: [String: Any]?, paramsList: [Any]?, body: Data?, headers: [String: String]?, forceURLEncoding: Bool) throws -> URLRequest
+    func build(method: HTTPMethod, baseURL: URL?, path: String?, params: [String: Sendable]?, paramsList: [Any]?, body: Data?, headers: [String: String]?, forceURLEncoding: Bool) throws -> URLRequest
     
     func build(parameters: [String: Sendable]?) -> [String: Sendable]?
 }
@@ -58,6 +58,10 @@ extension RequestBuilder {
         }
         
         return request
+    }
+    
+    public func build(parameters: [String: Sendable]?) -> [String: Sendable]? {
+        return parameters
     }
     
     public func encode(_ urlRequest: URLRequestConvertible, with parameters: [Any]) throws -> URLRequest {
