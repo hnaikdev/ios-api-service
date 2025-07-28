@@ -13,8 +13,9 @@ struct ExampleApp: App {
     var body: some Scene {
         WindowGroup {
             let service = RequesterService()
-            let apiService = APIService(networkService: service)
-            let viewModel = UserViewModel(service: apiService)
+            let apiService = ios_api_service.RequesterAPIService(networkService: service)
+            let clientService = APIService(apiService: apiService)
+            let viewModel = UserViewModel(service: clientService)
             ContentView(viewModel: viewModel)
         }
     }

@@ -14,27 +14,16 @@ protocol APIServiceProtocol {
 
 class APIService: APIServiceProtocol {
     
-    let networkService: RequesterServiceProtocol
+    let apiService: ios_api_service.APIService
     
-    init(networkService: RequesterServiceProtocol) {
-        self.networkService = networkService
+    init(apiService: ios_api_service.APIService) {
+        self.apiService = apiService
     }
     
     func fetchData() async throws -> [User] {
         do {
             let request = Requests.V1.getUsers
-            return try await execute(request: request, type: [User].self)
-        } catch {
-            throw error
-        }
-    }
-    
-    private func execute<Request: RequestConvertibleProtocol, Result: Codable>(request: Request, type: Result.Type) async throws -> Result {
-        do {
-            let data: Data = try await networkService.send(request: request)
-            let decoder: JSONDecoder = JSONDecoder()
-            let result: Result = try decoder.decode(Result.self, from: data)
-            return result
+            return try await apiService.execute(request: request, result: [User].self)
         } catch {
             throw error
         }
