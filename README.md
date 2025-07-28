@@ -1,6 +1,5 @@
 # iOS API Service
-
-A lightweight, modular, and extensible Swift networking framework designed to simplify API communication in iOS applications. It promotes clean architecture, protocol-oriented design, and full async/await support using `Alamofire`.
+A lightweight Swift networking layer for iOS with async/await, built on Alamofire and a protocol-oriented design.
 
 ---
 
