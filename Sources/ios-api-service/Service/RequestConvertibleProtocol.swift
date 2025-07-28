@@ -20,7 +20,7 @@ public protocol RequestBuilder {
     func build(parameters: [String: Sendable]?) -> [String: Sendable]?
 }
 
-extension RequestBuilder {
+public extension RequestBuilder {
     func build(
         method: HTTPMethod = .get,
         baseURL: URL? = nil,
