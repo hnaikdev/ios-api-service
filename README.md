@@ -11,6 +11,7 @@ A lightweight, modular, and extensible Swift networking framework designed to si
 - 🧩 Modular design, easy to plug into any iOS project
 - 🧵 Swift concurrency (`async/await`) support
 - ✅ Codable-based deserialization
+- Replace `Alamofire` with any other 3rd party framework or your own network client
 
 ---
 
