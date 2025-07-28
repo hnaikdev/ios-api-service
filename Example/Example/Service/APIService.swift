@@ -22,16 +22,18 @@ class APIService: APIServiceProtocol {
     
     func fetchData() async throws -> [User] {
         do {
-            let urlString = "https://fake-json-api.mock.beeceptor.com/users"
-            let url = URL(string: urlString)
-            let request = URLRequest(url: url!)
-            
-            let result = try await networkService.send(request: <#T##RequestConvertibleProtocol#>)
-            
-            for user in result {
-                try await cacheService.store(user)
-            }
-            
+            let request = Requests.V1.getUsers
+            return try await execute(request: request, type: [User].self)
+        } catch {
+            throw error
+        }
+    }
+    
+    private func execute<Request: RequestConvertibleProtocol, Result: Codable>(request: Request, type: Result.Type) async throws -> Result {
+        do {
+            let data: Data = try await networkService.send(request: request)
+            let decoder: JSONDecoder = JSONDecoder()
+            let result: Result = try decoder.decode(Result.self, from: data)
             return result
         } catch {
             throw error

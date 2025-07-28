@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import ios_api_service
 
 @main
 struct ExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let service = RequesterService()
+            let apiService = APIService(networkService: service)
+            let viewModel = UserViewModel(service: apiService)
+            ContentView(viewModel: viewModel)
         }
     }
 }

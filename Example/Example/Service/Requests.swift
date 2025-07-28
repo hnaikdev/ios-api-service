@@ -9,12 +9,20 @@ import ios_api_service
 import Foundation
 
 enum Requests {
-    enum V1: RequestBuilder {
+    enum V1 {
         case getUsers
     }
 }
 
-extension Requests.V1: RequestConvertibleProtocol {
+extension Requests.V1: RequestConvertibleProtocol, RequestBuilder {
+    func build(parameters: [String : any Sendable]?) -> [String : any Sendable]? {
+        return parameters
+    }
+    
+    func build(method: ios_api_service.HTTPMethod, baseURL: URL?, path: String?, params: [String : Any]?, paramsList: [Any]?, body: Data?, headers: [String : String]?, forceURLEncoding: Bool) throws -> URLRequest {
+        return try asURLRequest()
+    }
+    
     func asURLRequest() throws -> URLRequest {
         var request: URLRequest
         
