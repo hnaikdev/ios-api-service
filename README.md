@@ -1,7 +1,5 @@
-# iOS API Service
+# ios-api-service
 A lightweight Swift networking layer for iOS with async/await, built on Alamofire and a protocol-oriented design.
-
----
 
 ## 🚀 Features
 
