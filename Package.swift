@@ -11,21 +11,21 @@ let package = Package(
     products: [
         .library(
             name: "SwiftServiceKit",
-            targets: ["ios-api-service"]),
+            targets: ["SwiftServiceKit"]),
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.10.0"))
     ],
     targets: [
         .target(
-            name: "ios-api-service",
+            name: "SwiftServiceKit",
             dependencies: [
                 "Alamofire"
             ]
         ),
         .testTarget(
-            name: "ios-api-serviceTests",
-            dependencies: ["ios-api-service"]
+            name: "SwiftServiceKitTests",
+            dependencies: ["SwiftServiceKit"]
         ),
     ]
 )
