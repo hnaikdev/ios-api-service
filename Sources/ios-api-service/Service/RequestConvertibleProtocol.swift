@@ -20,8 +20,8 @@ public protocol RequestBuilder {
     func build(parameters: [String: Sendable]?) -> [String: Sendable]?
 }
 
-public extension RequestBuilder {
-    func build(
+extension RequestBuilder {
+    public func build(
         method: HTTPMethod = .get,
         baseURL: URL? = nil,
         path: String? = nil,
@@ -60,7 +60,7 @@ public extension RequestBuilder {
         return request
     }
     
-    func encode(_ urlRequest: URLRequestConvertible, with parameters: [Any]) throws -> URLRequest {
+    public func encode(_ urlRequest: URLRequestConvertible, with parameters: [Any]) throws -> URLRequest {
         var urlRequest = try urlRequest.asURLRequest()
         let data = try JSONSerialization.data(withJSONObject: parameters, options: [])
         
